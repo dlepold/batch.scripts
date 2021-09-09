@@ -41,7 +41,9 @@ var arguments=input.ReadLine().trim();
 
 function lenToSeconds(len){
 	var hhmmss=len.split(":");
-	return Number(hhmmss[0])*3600 + Number(hhmmss[1])*60 + Number(hhmmss[2]);
+	var secs = Number(hhmmss[0])*3600 + Number(hhmmss[1])*60 + Number(hhmmss[2]);
+	if  (secs >= 0 && secs < 1) secs = '1';  // case sound shorter than 1 second  
+	return secs; 
 }
 
 //fso
